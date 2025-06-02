@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <i class="fas fa-laptop logo-icon"></i>
+                <span class="logo-text">TechMart</span>
+            </div>
+            <form class="search-form" onsubmit="event.preventDefault(); performSearch();">
+                <input type="text" placeholder="Search laptops..." id="search-box" aria-label="Search laptops">
+                <button type="submit" id="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+            </form>
+            <button id="menu-btn" class="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-container" aria-live="polite">
+            <div class="loading">Loading laptops...</div>
+        </section>
+    </main>
+
+    <section class="users-section">
+        <div class="container">
+            <div id="user-list-container" class="user-list-container">
+                <div class="loading">Loading user data...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; 2025 TechMart. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Filters</h3>
+            <button class="close-sidebar-btn" id="close-sidebar-btn">&times;</button>
+        </div>
+        <div class="sidebar-content">
+            <a href="#" class="sidebar-link active" data-value="all" data-filter-type="all">All Laptops</a>
+
+            <div class="sidebar-section" id="sidebar-suppliers">
+                <h4 class="sidebar-section-title" data-filter-type="supplier">Suppliers <i class="fas fa-chevron-down"></i></h4>
+                <div class="sidebar-sub-links-container open">
+                </div>
+            </div>
+
+            <div class="sidebar-section" id="sidebar-categories">
+                <h4 class="sidebar-section-title" data-filter-type="category">Categories <i class="fas fa-chevron-down"></i></h4>
+                <div class="sidebar-sub-links-container">
+                </div>
+            </div>
+
+            <a href="#" class="sidebar-link">About Us</a>
+            <a href="#" class="sidebar-link">Contact</a>
+        </div>
+    </div>
+</body>
+</html>
